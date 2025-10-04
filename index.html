@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Animals - 列表</title>
+    <link rel="preload" as="image" href="photo/lion.jpg" />
+    <link rel="preload" as="image" href="photo/tiger.jpg" />
+    <link rel="preload" as="image" href="photo/puma.jpg" />
+    <link rel="preload" as="image" href="photo/wolf.jpg" />
+    <style>
+        body
+        {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+            margin: 0;
+            background: #f7f7f9;
+            color: #222;
+        }
+		header
+        {
+            padding: 16px 20px;
+            background: #111827;
+            color: #fff;
+        }
+		header h1
+        {
+            margin: 0;
+            font-size: 20px;
+        }
+		main
+        {
+            padding: 20px;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+		.grid
+        {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 16px;
+        }
+		.card
+        {
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+			box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+			transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+		.card:hover
+		{
+			transform: translateY(-2px);
+			box-shadow: 0 8px 20px rgba(0,0,0,0.10);
+		}
+		.card img
+        {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            background: #eee;
+        }
+		.card .content
+        { 
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+		.card h3
+        { 
+            margin: 0;
+            font-size: 18px;
+        }
+		.card p
+        {
+            margin: 0;
+            color: #6b7280;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+		.card .actions
+        {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 8px;
+        }
+		.btn 
+        { 
+            background: #111827;
+            color: #fff;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+			transition: background 0.2s ease, transform 0.1s ease;
+        }
+		.btn:hover
+        {
+            background: #0b1020;
+        }
+		.btn:active
+		{
+			transform: translateY(1px);
+		}
+		.btn:focus-visible
+		{
+			outline: 2px solid #0ea5e9;
+			outline-offset: 2px;
+		}
+		.footer
+        {
+            margin-top: 24px;
+            color: #6b7280;
+            font-size: 13px;
+            text-align: center;
+        }
+
+		@media (max-width: 480px)
+		{
+			.grid
+			{
+				grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+			}
+			.card img
+			{
+				height: 180px;
+			}
+		}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Animal Explorer</h1>
+    </header>
+    <main>
+        <section>
+            <h2 style="margin: 0 0 12px 0; font-size: 18px;">動物列表</h2>
+            <div id="grid" class="grid"></div>
+        </section>
+        <p class="footer">點擊「查看」進入詳細頁，可按愛心與留言（下一步完成）。</p>
+    </main>
+    <script src="index.js" defer></script>
+</body>
+</html>
